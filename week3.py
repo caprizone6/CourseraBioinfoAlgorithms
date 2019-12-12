@@ -52,20 +52,25 @@ def DistanceBetweenPatternAndStrings(Pattern, Dna):
   return distance
 
 
-def MedianString(Dna, k):
+def MedianString(DnaTxt, k):
+  Dna = DnaTxt.split(' ')
   distance = float("inf")
   for i in range(4**k-1):
     Pattern = week1.NumberToPattern(i, k)
-    if distance > DistanceBetweenPatternAndStrings(Pattern, Dna):
-      distance = DistanceBetweenPatternAndStrings(Pattern, Dna)
-      Median = Pattern
+    dist = DistanceBetweenPatternAndStrings(Pattern, Dna)
+    if distance > dist:
+      distance = dist
+      Median = []
+      Median.append(Pattern)
+    elif distance == dist:
+      Median.append(Pattern)
   return Median
 
 def MotifProfile(Motifs):
   Profile = {'A':[],'C':[],'G':[],'T':[]}
   for k in range(len(Motifs[0])):
     for key in Profile:
-      Profile[key].append(0)
+      Profile[key].append(len(Motifs))
 
   for k in range(len(Motifs[0])):
     for i in range(len(Motifs)):
