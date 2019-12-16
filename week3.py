@@ -66,7 +66,7 @@ def MedianString(DnaTxt, k):
       Median.append(Pattern)
   return Median
 
-def MotifProfile(Motifs):
+def Motif2Profile(Motifs):
   Profile = {'A':[],'C':[],'G':[],'T':[]}
   for k in range(len(Motifs[0])):
     for key in Profile:
@@ -82,6 +82,12 @@ def MotifProfile(Motifs):
     # CountList = Count.values()
     # Profile = [i / len(Motifs) for i in CountList]
   return Profile
+
+def Profile2Motif(Dna, k, Profile):
+  Motifs = []
+  for i, dna in enumerate(Dna):
+    Motifs.append(MostProbableKmer(dna, k, Profile))
+  return Motifs
 
 def MotifProbability(Motif, Profile):
   probability = 1
@@ -116,7 +122,7 @@ def MostProbableKmer(Dna, k, Profile):
 #   return distance
 
 def Score(Motifs):
-  Profile = MotifProfile(Motifs)
+  Profile = Motif2Profile(Motifs)
   consensus = ConsesnsusSeq(Profile)
   distance = DistanceBetweenPatternAndStrings(consensus, Motifs)
   return distance
@@ -141,7 +147,7 @@ def GreedyMotifSearch(DnaTxt, k, t):
     Motifs = []
     Motifs.append(Dna[0][i:i+k])
     for j in range(1,t):
-      Profile = MotifProfile(Motifs)
+      Profile = Motif2Profile(Motifs)
       Motifs.append(MostProbableKmer(Dna[j], k, Profile))
     if Score(Motifs) < Score(BestMotifs):
       BestMotifs = Motifs
