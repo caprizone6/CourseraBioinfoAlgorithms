@@ -78,7 +78,7 @@ def Motif2Profile(Motifs):
       for key in Profile:
         if key == nt:
           Profile[key][k] += 1    
-        # Profile[key] = [t / len(Motifs) for t in Profile[key]]
+        # Profile[key] = [t / len(Motifs)*2 for t in Profile[key]]
     # CountList = Count.values()
     # Profile = [i / len(Motifs) for i in CountList]
   return Profile
