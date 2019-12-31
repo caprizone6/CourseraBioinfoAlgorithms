@@ -1,5 +1,5 @@
-import week1
-import week2
+import c1w1 as week1
+import c1w2 as week2
 import math
 
 def MotifEnumeration(Dna, k, d):

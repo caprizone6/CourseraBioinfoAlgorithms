@@ -1,4 +1,4 @@
-import week1
+import c1w1 as week1
 
 def Skew(text):
   SkewVals = []

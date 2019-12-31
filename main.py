@@ -1,7 +1,7 @@
 # import week1
 # import week2
-import week3
-import week4
+import c1w3
+# import c1w4
 
 # print(week1.PatternStart('CGC','ATGACTTCGCTGTTACGCGC'))
 # print(week2.RevComp('GCTAGCT'))
@@ -82,4 +82,4 @@ import week4
 # 'GGGACTTTCGGCCCTGTCC',
 # 'GGGACCAACGCCCCTGGGA',
 # 'GGGACCGAAGTCCCCGGGC'])))
-print(week3.Profile2Motif(['ATGAGGTC','GCCCTAGA','AAATAGAT','TTGTGCTA'],3,week3.Motif2Profile(['GTC','CCC','ATA','GCT'])))
+print(c1w3.Profile2Motif(['ATGAGGTC','GCCCTAGA','AAATAGAT','TTGTGCTA'],3,c1w3.Motif2Profile(['GTC','CCC','ATA','GCT'])))

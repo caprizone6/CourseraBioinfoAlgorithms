@@ -1,4 +1,4 @@
-import week3
+import c1w3
 import random
 
 def RandomizedMotifSearch(Dna, k, t):
@@ -9,10 +9,10 @@ def RandomizedMotifSearch(Dna, k, t):
     Motifs.append(dna[start:start+k])
   BestMotifs = Motifs
   while True:
-    Profile = week3.Motif2Profile(Motifs)
-    Motifs = week3.Profile2Motif(Dna, k, Profile)
-    score = week3.Score(Motifs)
-    if score < week3.Score(BestMotifs):
+    Profile = c1w3.Motif2Profile(Motifs)
+    Motifs = c1w3.Profile2Motif(Dna, k, Profile)
+    score = c1w3.Score(Motifs)
+    if score < c1w3.Score(BestMotifs):
       BestMotifs = Motifs
     else:  
       return BestMotifs, score
@@ -39,7 +39,7 @@ def StringProbability(String, k, Profile):
   ProbabilityArray = []
   for i in range(len(String)-k+1):
     Text = String[i:i+k]
-    MProb = week3.MotifProbability(Text, Profile)
+    MProb = c1w3.MotifProbability(Text, Profile)
     ProbabilityArray.append(MProb)
   return ProbabilityArray
 
@@ -68,15 +68,15 @@ def GibbsSampler(Motifs, k, t, N):
   for j in range(N):
     i = random.randint(0,t-1)
     Motifi = Motifs.pop(i)
-    Profile = week3.Motif2Profile(Motifs)
+    Profile = c1w3.Motif2Profile(Motifs)
     # print(Profile)
     # Motifi ← Profile-randomly generated k-mer in the i-th sequence
     probArray = StringProbability(Motifi, k, Profile)
     Randomi = RandomBiased(probArray) 
     RandomMotifi = Motifi[Randomi:Randomi+k]
     Motifs.insert(i,RandomMotifi)
-    score = week3.Score(Motifs)
-    if score < week3.Score(BestMotifs):
+    score = c1w3.Score(Motifs)
+    if score < c1w3.Score(BestMotifs):
       BestMotifs = Motifs
   return BestMotifs, score
 
