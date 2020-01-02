@@ -1,7 +1,8 @@
 # import week1
 # import week2
-import c1w3
+# import c1w3
 # import c1w4
+import c2w1
 
 # print(week1.PatternStart('CGC','ATGACTTCGCTGTTACGCGC'))
 # print(week2.RevComp('GCTAGCT'))
@@ -82,4 +83,12 @@ import c1w3
 # 'GGGACTTTCGGCCCTGTCC',
 # 'GGGACCAACGCCCCTGGGA',
 # 'GGGACCGAAGTCCCCGGGC'])))
-print(c1w3.Profile2Motif(['ATGAGGTC','GCCCTAGA','AAATAGAT','TTGTGCTA'],3,c1w3.Motif2Profile(['GTC','CCC','ATA','GCT'])))
+# print(c1w3.Profile2Motif(['ATGAGGTC','GCCCTAGA','AAATAGAT','TTGTGCTA'],3,c1w3.Motif2Profile(['GTC','CCC','ATA','GCT'])))
+
+
+### Genome Sequencing (Bioinformatics II)
+## Week 1
+# print(c2w1.Composition(5,'CAATCCAAC'))
+# print(c2w1.PathToGenome(['ACCGA', 'CCGAA', 'CGAAG', 'GAAGC', 'AAGCT']))
+# print(c2w1.runPathToGenome('GenomePathStringInput.txt'))
+# print(c2w1.runPathToGenome('dataset_198_3.txt'))
