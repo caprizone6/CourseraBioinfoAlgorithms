@@ -88,7 +88,11 @@ import c2w1
 
 ### Genome Sequencing (Bioinformatics II)
 ## Week 1
+
 # print(c2w1.Composition(5,'CAATCCAAC'))
 # print(c2w1.PathToGenome(['ACCGA', 'CCGAA', 'CGAAG', 'GAAGC', 'AAGCT']))
+
 # print(c2w1.runPathToGenome('GenomePathStringInput.txt'))
 # print(c2w1.runPathToGenome('dataset_198_3.txt'))
+
+print(c2w1.Overlap(['ATGCG', 'GCATG', 'CATGC', 'AGGCA', 'GGCAT', 'GGCAC']))

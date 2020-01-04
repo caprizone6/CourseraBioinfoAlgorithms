@@ -24,3 +24,34 @@ def runPathToGenome(file):
   Path = [x.strip() for x in Path]
   Genome = PathToGenome(Path)
   return Genome
+
+def Overlap(Patterns):
+  Graph = []
+  Pat_size = len(Patterns)
+  Pat_len = len(Patterns[0])
+  for i in range(Pat_size):
+    node_list = []
+    node_list.append(Patterns[i])
+    for j in range(Pat_size):
+      if(i != j and Patterns[i][-(Pat_len-1):] == Patterns[j][0:(Pat_len-1)]):
+        node_list.append(Patterns[j])
+    if(len(node_list) > 1):    
+      Graph.append(node_list)
+  return Graph
+
+  def runOverlap(file):
+    with open(file, 'r') as file:
+      Patterns = file.readlines()
+    Patterns = [x.strip() for x in Patterns]
+    Graph = Overlap(Patterns)
+    GraphOut = []
+    for i, g in enumerate(Graph):
+      for j in range(len(g)):
+        if j == 0:
+          Connection = g[0] + ' -> '
+        elif j == (len(g) - 1):
+          Connection += g[j] 
+        else:
+          Connection += g[j] + ','
+      GraphOut.append(Connection)
+    return '\n'.join(GraphOut)
