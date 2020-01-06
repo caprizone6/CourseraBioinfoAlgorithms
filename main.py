@@ -95,4 +95,10 @@ import c2w1
 # print(c2w1.runPathToGenome('GenomePathStringInput.txt'))
 # print(c2w1.runPathToGenome('dataset_198_3.txt'))
 
-print(c2w1.Overlap(['ATGCG', 'GCATG', 'CATGC', 'AGGCA', 'GGCAT', 'GGCAC']))
+# print(c2w1.Overlap(['ATGCG', 'GCATG', 'CATGC', 'AGGCA', 'GGCAT', 'GGCAC']))
+
+# print(c2w1.DeBruijn(4,'AAGATTCTCTAAGA'))
+# print(c2w1.DeBruijn(4,'TAATGCCATGGGATGTT'))
+# print(c2w1.Kmer2DeBruijn(['GAGG', 'CAGG', 'GGGG', 'GGGA', 'CAGG', 'AGGG', 'GGAG']))
+print(c2w1.Kmer2DeBruijn(['GAGG','CAGG','GGGG','GGGA','CAGG','AGGG','GGAG']))
+# print(c2w1.Kmer2DeBruijn(['AGGT', 'GGCT', 'AGGC']))
